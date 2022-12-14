@@ -13,7 +13,9 @@ namespace WindowsFormsApp1.Properties
     public partial class MainScreen : Form
     {
         const string FORGE_WEB_PATH = "https://github.com/GeoPlayerRu/NWLauncher/blob/main/NewWorldLauncher/Modpack/Forge/forge-1.12.2-14.23.5.2859-installer.jar?raw=true";
+        const string MODSDIR_WEB_PATH = "https://github.com/GeoPlayerRu/NWLauncher/blob/main/NewWorldLauncher/Modpack/Mods/";
         readonly string[] MODS = { "CustomNPCs", "FTBLib", "FTBQuests","ItemFilters"};
+        readonly string USER_PATH = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
         private string _nickname;
         private MSession session = null; 
@@ -38,10 +40,13 @@ namespace WindowsFormsApp1.Properties
                 return;
             }
 
+            PlayButton.Enabled = false;
+            NameBox.Enabled = false;
+
             //Докачивание и установка недостающих компонентов
             var client = new WebClient();
 
-            if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)+ "\\AppData\\Roaming\\.minecraft\\versions\\1.12.2-forge-14.23.5.2859") == false)
+            if (Directory.Exists(USER_PATH + @"\AppData\Roaming\.minecraft\versions\1.12.2-forge-14.23.5.2859") == false)
             {
                
                 MessageBox.Show("Похоже, что у вас не установлен Forge. Сейчас будет запущена его установка, от вас требуется лишь нажать OK.");
@@ -49,9 +54,19 @@ namespace WindowsFormsApp1.Properties
                 client.DownloadFile(FORGE_WEB_PATH,Path.GetTempPath()+ "forge.jar");
                 await Task.Run(() => InstallForgeAsync(Path.GetTempPath()+ "forge.jar"));
             }
+
+            if (!Directory.Exists(@"\AppData\Roaming\.minecraft\mods\"))
+            {
+                Directory.CreateDirectory(@"\AppData\Roaming\.minecraft\mods\");
+            }
+
             foreach(string mod in MODS)
             {
-
+                Console.WriteLine(File.Exists(USER_PATH + $"\\AppData\\Roaming\\.minecraft\\mods\\{mod}.jar"));
+                if(File.Exists(USER_PATH + $"\\AppData\\Roaming\\.minecraft\\mods\\{mod}.jar") == false)
+                {
+                    client.DownloadFile(MODSDIR_WEB_PATH+mod+".jar?raw=true", USER_PATH + $"\\AppData\\Roaming\\.minecraft\\mods\\{mod}.jar");
+                }
             }
             
             //Запуск игры
@@ -76,6 +91,11 @@ namespace WindowsFormsApp1.Properties
             process.Start();
 
             process.WaitForExit();
+        }
+
+        private void Heading_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

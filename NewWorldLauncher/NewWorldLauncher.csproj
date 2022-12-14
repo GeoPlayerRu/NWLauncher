@@ -95,10 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modpack\Forge\forge-1.12.2-14.23.5.2859-installer.jar" />
-    <Content Include="Modpack\Mods\CustomNPCs_1.12.2-%2805Jul20%29.jar" />
-    <Content Include="Modpack\Mods\FTBLib-5.4.7.2.jar" />
-    <Content Include="Modpack\Mods\FTBQuests-1202.9.0.15.jar" />
-    <Content Include="Modpack\Mods\ItemFilters-1.0.4.2.jar" />
+    <Content Include="Modpack\Mods\CustomNPCs.jar" />
+    <Content Include="Modpack\Mods\FTBLib.jar" />
+    <Content Include="Modpack\Mods\FTBQuests.jar" />
+    <Content Include="Modpack\Mods\ItemFilters.jar" />
+    <None Include="NotBuildedResources\UpperImage.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
