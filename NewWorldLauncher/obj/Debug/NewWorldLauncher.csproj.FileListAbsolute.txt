@@ -18,3 +18,7 @@ C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\bin\Debug\NewWorldLaunch
 C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\obj\Debug\NewWorldLauncher.Properties.Resources.resources
 C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\obj\Debug\NewWorldLauncher.exe
 C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\obj\Debug\NewWorldLauncher.pdb
+C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\bin\Debug\NewWorldLauncher.exe.manifest
+C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\bin\Debug\NewWorldLauncher.application
+C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\obj\Debug\NewWorldLauncher.exe.manifest
+C:\Users\vesel\source\repos\NWLauncher\NewWorldLauncher\obj\Debug\NewWorldLauncher.application

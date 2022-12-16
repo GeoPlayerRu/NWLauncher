@@ -1,0 +1,10 @@
+﻿{
+	"forge-link": "https://github.com/GeoPlayerRu/NWLauncher/blob/main/NewWorldLauncher/Modpack/Forge/forge-1.12.2-14.23.5.2859-installer.jar?raw=true",
+	"mods-link": "https://github.com/GeoPlayerRu/NWLauncher/blob/main/NewWorldLauncher/Modpack/Mods/",
+	"mod-list": [
+		"CustomNPCs",
+		"FTBLib",
+		"FTBQuests",
+		"ItemFilters"
+	]
+}

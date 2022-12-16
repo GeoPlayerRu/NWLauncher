@@ -32,7 +32,7 @@
             this.NameBox = new System.Windows.Forms.TextBox();
             this.UpperImage = new System.Windows.Forms.PictureBox();
             this.DownImage = new System.Windows.Forms.PictureBox();
-            this.Heading = new System.Windows.Forms.Label();
+            this.ProgressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.UpperImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DownImage)).BeginInit();
             this.SuspendLayout();
@@ -80,26 +80,21 @@
             this.DownImage.TabIndex = 3;
             this.DownImage.TabStop = false;
             // 
-            // Heading
+            // ProgressBar
             // 
-            this.Heading.AutoSize = true;
-            this.Heading.BackColor = System.Drawing.Color.MediumOrchid;
-            this.Heading.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Heading.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Heading.ForeColor = System.Drawing.Color.Black;
-            this.Heading.Location = new System.Drawing.Point(12, 9);
-            this.Heading.Name = "Heading";
-            this.Heading.Size = new System.Drawing.Size(324, 58);
-            this.Heading.TabIndex = 4;
-            this.Heading.Text = "НОВЫЙ МИР";
-            this.Heading.Click += new System.EventHandler(this.Heading_Click);
+            this.ProgressBar.ForeColor = System.Drawing.Color.LawnGreen;
+            this.ProgressBar.Location = new System.Drawing.Point(253, 389);
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.Size = new System.Drawing.Size(224, 23);
+            this.ProgressBar.TabIndex = 4;
+            this.ProgressBar.Visible = false;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Heading);
+            this.Controls.Add(this.ProgressBar);
             this.Controls.Add(this.NameBox);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.DownImage);
@@ -119,6 +114,6 @@
         private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.PictureBox UpperImage;
         private System.Windows.Forms.PictureBox DownImage;
-        private System.Windows.Forms.Label Heading;
+        private System.Windows.Forms.ProgressBar ProgressBar;
     }
 }
